@@ -21,7 +21,7 @@
 			{
 				throw new FileNotFoundException(filePath);
 
-				
+
 
 
 			}
@@ -29,18 +29,18 @@
 			{
 				throw new ArgumentException("Путь к файлу не может быть пустым");
 
-				
+
 
 			}
 			catch (Exception ex) //другие исключения
 			{
 				Console.WriteLine($"An error occurred while reading the file: {ex.Message}");
-				
+
 			}
 
 			return logEntries;
 		}
-	
+
 		public static void WriteResults(string filePath, Dictionary<string, int> counts) //Метод записывает в файл отфильтрованые записи. Записывает ip адресс и количество обращаний.
 		{
 			try
@@ -53,7 +53,7 @@
 					}
 				}
 			}
-			catch (DirectoryNotFoundException ) 
+			catch (DirectoryNotFoundException)
 			{
 				throw new DirectoryNotFoundException(filePath);
 

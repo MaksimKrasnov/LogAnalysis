@@ -13,7 +13,7 @@ namespace LogAnalysis.Tests
 		[Fact]
 		public void FilterLogEntriesByAddress_ShouldReturnFilteredEntries()
 		{
-			
+
 			var logEntries = new List<(string, DateTime)>
 			{
 				("192.168.1.1", DateTime.Now),
@@ -31,10 +31,10 @@ namespace LogAnalysis.Tests
 			};
 
 
-			
+
 			var result = RetrievingDataFromFile.FilterLogEntriesByAddress(logEntries, commandLineArguments);
 
-			
+
 			Assert.Equal(3, result.Count);
 		}
 
@@ -44,7 +44,7 @@ namespace LogAnalysis.Tests
 		[Fact]
 		public void FilterLogEntriesByTime_ShouldReturnFilteredEntries()
 		{
-			
+
 			var logEntries = new List<(string, DateTime)>
 			{
 				("192.168.1.1", DateTime.Now),
@@ -59,10 +59,10 @@ namespace LogAnalysis.Tests
 				TimeEnd = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
 			};
 
-			
+
 			var result = RetrievingDataFromFile.FilterLogEntriesByTime(logEntries, commandLineArguments);
 
-			
+
 			Assert.Equal(2, result.Count);
 		}
 		/// <summary>
@@ -71,7 +71,7 @@ namespace LogAnalysis.Tests
 		[Fact]
 		public void CountOccurrences_ShouldReturnCorrectCounts()
 		{
-			
+
 			var logEntries = new List<(string, DateTime)>
 			{
 				("192.168.1.1", DateTime.Now),
@@ -80,10 +80,10 @@ namespace LogAnalysis.Tests
 				("192.168.1.3", DateTime.Now),
 			};
 
-			
+
 			var result = RetrievingDataFromFile.CountOccurrences(logEntries);
 
-			
+
 			Assert.Equal(2, result["192.168.1.1"]);
 			Assert.Equal(1, result["192.168.1.2"]);
 			Assert.Equal(1, result["192.168.1.3"]);
@@ -94,7 +94,7 @@ namespace LogAnalysis.Tests
 		[Fact]
 		public void FilterLogEntriesByAddress_ShouldReturnEmptyListWhenNoMatches()
 		{
-			
+
 			var logEntries = new List<(string, DateTime)>
 			{
 				("192.168.1.1", DateTime.Now),
@@ -112,10 +112,10 @@ namespace LogAnalysis.Tests
 			};
 
 
-			
+
 			var result = RetrievingDataFromFile.FilterLogEntriesByAddress(logEntries, commandLineArguments);
 
-		
+
 			Assert.Empty(result);
 		}
 		/// <summary>
@@ -124,7 +124,7 @@ namespace LogAnalysis.Tests
 		[Fact]
 		public void FilterLogEntriesByTime_ShouldReturnEmptyListWhenNoMatches()
 		{
-		
+
 			var logEntries = new List<(string, DateTime)>
 			{
 				("192.168.1.1", DateTime.Now),
@@ -141,10 +141,10 @@ namespace LogAnalysis.Tests
 			};
 #pragma warning restore CS8625 // Литерал, равный NULL, не может быть преобразован в ссылочный тип, не допускающий значение NULL.
 
-			
+
 			var result = RetrievingDataFromFile.FilterLogEntriesByTime(logEntries, commandLineArguments);
 
-			
+
 			Assert.Empty(result);
 		}
 		/// <summary>
@@ -153,13 +153,13 @@ namespace LogAnalysis.Tests
 		[Fact]
 		public void CountOccurrences_ShouldReturnEmptyDictionaryWhenNoEntries()
 		{
-			
+
 			var logEntries = new List<(string, DateTime)>();
 
-			
+
 			var result = RetrievingDataFromFile.CountOccurrences(logEntries);
 
-			
+
 			Assert.Empty(result);
 		}
 	}

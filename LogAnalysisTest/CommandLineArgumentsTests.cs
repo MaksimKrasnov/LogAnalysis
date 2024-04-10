@@ -63,12 +63,10 @@ namespace LogAnalysis.Tests
 		[Fact]
 		public void Constructor_WithUnknownArgument_ShouldThrowArgumentException()
 		{
-			// Arrange
 			string[] args = {
 				"--unknown-arg", "value"
 			};
 
-			// Act & Assert
 			Assert.Throws<ArgumentException>(() => new CommandLineArguments(args));
 		}
 	}

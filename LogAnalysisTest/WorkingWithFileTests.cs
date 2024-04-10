@@ -7,6 +7,9 @@ namespace LogAnalysis.Tests
 {
 	public class WorkingWithFileTests
 	{
+		/// <summary>
+		///Проверка что при передачи валидного пути будет возвращен не пустой список
+		/// </summary>
 		[Fact]
 		public void ReadLogFile_WithValidFilePath_ShouldReturnNonEmptyList()
 		{
@@ -17,7 +20,9 @@ namespace LogAnalysis.Tests
 			Assert.NotNull(logEntries);
 			Assert.NotEmpty(logEntries);
 		}
-
+		/// <summary>
+		/// Проверка что при передаче невалидного пути будет исключени
+		/// </summary>
 		[Fact]
 		public void ReadLogFile_WithInvalidFilePath_ShouldThrowFileNotFoundException()
 		{
@@ -25,6 +30,9 @@ namespace LogAnalysis.Tests
 
 			Assert.Throws<FileNotFoundException>(() => WorkingWithFile.ReadLogFile(invalidFilePath));
 		}
+		/// <summary>
+		/// Проверка если не передали путь к файлу будет исключение
+		/// </summary>
 		[Fact]
 		public void ReadLogFile_WithEmptyFilePath_ShouldThrowArgumentException()
 		{
@@ -32,7 +40,9 @@ namespace LogAnalysis.Tests
 
 			Assert.Throws<ArgumentException>(() => WorkingWithFile.ReadLogFile(emptyFilePath));
 		}
-
+		/// <summary>
+		/// Тестирует запись в файл
+		/// </summary>
 		[Fact]
 
 		public void WriteResults_WithValidArguments_ShouldWriteToFile()
@@ -56,7 +66,7 @@ namespace LogAnalysis.Tests
 			foreach (var line in lines)
 			{
 				var parts = line.Split(':');
-				Assert.Equal(2, parts.Length); 
+				Assert.Equal(2, parts.Length);
 				var ipAddress = parts[0];
 				var countStr = parts[1];
 
@@ -67,11 +77,13 @@ namespace LogAnalysis.Tests
 				Assert.Equal(expectedCounts[ipAddress], actualCount);
 			}
 		}
-
+		/// <summary>
+		/// Проверка если не передали путь к файлу будет исключение
+		/// </summary>
 		[Fact]
 		public void WriteResults_WithEmptyFilePath_ShouldThrowArgumentException()
 		{
-			// Arrange
+
 			string emptyFilePath = "";
 			var counts = new Dictionary<string, int>
 	{
@@ -79,7 +91,7 @@ namespace LogAnalysis.Tests
 		{ "192.168.0.2", 5 }
 	};
 
-			// Act & Assert
+
 			Assert.Throws<Exception>(() => WorkingWithFile.WriteResults(emptyFilePath, counts));
 		}
 	}

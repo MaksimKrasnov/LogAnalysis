@@ -3,8 +3,8 @@
 	public class CommandLineArguments                                                                         //DTO класс для хранеиния аргументов командной строки 
 	{
 		public string? FileLog { get; set; } 
-		public string? FileOutput { get; set; }
-	
+		public string? FileOutput { get; set; } 
+
 		public string? TimeStart { get; set; } 
 		public string? TimeEnd { get; set; } 
 
@@ -40,7 +40,7 @@
 						TimeStart = args[++i];
 						break;
 					case "--time-end":
-						TimeEnd = args[++i];
+						TimeEnd = args[++i]+" 23:59:59";
 						break;
 					default:
 						throw new ArgumentException($"Недопустимый аргумент: {args[i]}");

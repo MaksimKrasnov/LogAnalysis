@@ -147,9 +147,7 @@ coverage*.json
 coverage*.xml
 coverage*.info
 
-# Visual Studio code coverage results
-*.coverage
-*.coveragexml
+
 
 # NCrunch
 _NCrunch_*
