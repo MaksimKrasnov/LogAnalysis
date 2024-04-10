@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAnalysis", "LogAnalysis.csproj", "{15C833B4-94CB-4FD9-8790-14275E0F6411}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogAnalysisTest", "..\LogAnalysisTest\LogAnalysisTest.csproj", "{EFA5FF82-8110-40A3-9275-48AB40469383}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15C833B4-94CB-4FD9-8790-14275E0F6411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C833B4-94CB-4FD9-8790-14275E0F6411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C833B4-94CB-4FD9-8790-14275E0F6411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C833B4-94CB-4FD9-8790-14275E0F6411}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA5FF82-8110-40A3-9275-48AB40469383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA5FF82-8110-40A3-9275-48AB40469383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA5FF82-8110-40A3-9275-48AB40469383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA5FF82-8110-40A3-9275-48AB40469383}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4927512-EB11-4E51-994D-63E5E2E55572}
+	EndGlobalSection
+EndGlobal
